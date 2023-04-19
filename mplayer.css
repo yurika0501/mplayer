@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+h1 {
+    color: #4ea8f9;
+}
+
+body {
+    text-align: center;
+    background: #000022; 
+}
+
+.appframe {
+    background: #ffffff;
+    width: 420px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px; /*角丸*/
+}
