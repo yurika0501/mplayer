@@ -16,3 +16,23 @@ body {
     padding: 10px;
     border-radius: 10px; /*角丸*/
 }
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    border-top: dashed 1px #b1daff;
+    padding: 2px;
+    cursor: pointer;/*マウスポイントを指型に変更*/
+}
+
+.active {
+    background:  #efefff;
+    color: #ff6800;
+}
+
+li:hover {
+    background: #efefff;/*マウスポインタを合わせた時に背景色を*/
+}
