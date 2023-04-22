@@ -5,7 +5,12 @@ for(var i=0; i<listitems.length; i++){
     listitems[i].addEventListener('click',
         (e)=>{
             var li = e.target;// クリックされた要素を取得
-            var file = li.getAttribute('data-file');// ファイル名を取得
+        }
+    );
+}
+
+function playMusic(li){
+    var file = li.getAttribute('data-file');// ファイル名を取得
             var audio = document.querySelector('audio');// audio要素を選択
             audio.setAttribute('src', file);//src属性をセット
             audio.play();//再生開始
@@ -14,8 +19,6 @@ for(var i=0; i<listitems.length; i++){
             
             activeli.className = '';//class属性をから文字にする
             li.className = 'active';//クリックした要素にクラス名を設定
-        }
-    );
 }
 
 //再生中と停止中でイラストを切り替える
@@ -30,5 +33,19 @@ audio.addEventListener('pause',
     (e)=>{
         var img = document.querySelector('img');
         img.setAttribute('src', 'pict_stop.png');
+    }
+);
+
+//曲を最後まで再生したとき
+audio.addEventListener('ended',
+    (e)=>{
+        var img = document.querySelector('img');
+        img.setAttribute('src', 'pict_stop.png');
+        //次の曲に切り替え
+        var activeli = document.querySelector('.active');
+        var nextli = activeli.nextElementSibling;//次の要素を取得
+        if(nextli != null){
+            playMusic(nextli);//関数を呼び出す
+        }
     }
 );
