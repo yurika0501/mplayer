@@ -49,3 +49,16 @@ audio.addEventListener('ended',
         }
     }
 );
+
+// ランダム選曲機能
+var random = document.querySelector('#random');
+random.addEventListener('click',
+    (e)=>{
+        e.preventDefault();//a要素本来の機能を無効にする
+        var listitems = document.querySelectorAll('li');
+        var len = listitems.length;//長さを調べる
+        var rnd = Math.floor(Math.random() * len);//ランダムに選ぶ
+        playMusic(listitems[rnd]);//曲を再生
+        
+    }
+);
